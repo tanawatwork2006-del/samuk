@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "postinstall": "prisma generate",
+    "build": "prisma generate && prisma db push && node prisma/seed.js && next build",
     "start": "next start",
     "db:push": "prisma db push",
     "db:generate": "prisma generate",
